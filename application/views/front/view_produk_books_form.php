@@ -56,6 +56,7 @@
             <div class="table-responsive col-md-12">
               <table id="table_data" class="table table-bordered table-admin">
                 <tr>
+
                   <?php foreach ($view_produk_books_form as $vbook): ?>
                   <td><img src="<?php echo base_url('assets/img/produk/'.$vbook['product_id'].'.png');?>" width="40" height="40"></td>
                   <td>

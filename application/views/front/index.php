@@ -50,10 +50,18 @@
               <table id="table_data" class="table table-bordered table-admin">
                 <tr>
                   <?php foreach ($view as $o): ?>
-                  <td><a href="<?php echo base_url('view_produk_books_form') ?>"><img class="img-rounded" src="<?php echo base_url('assets/img/produk/'.$o['product_id'].'.png');?>" width="100" height="150"></a>
+                  <td>
+                  <a href="<?php echo base_url('view_produk_books_form') ?>">
+                    <img class="img-rounded" 
+                      src="<?php echo base_url('assets/img/produk/'.$o['product_id'].'.png');?>" 
+                      width="100" height="150">
+                  </a>
                   <br>
-                    <a href="<?php echo base_url('view_produk_books_form') ?>"><br><?=$o['product_name'] ?></a>
-                    <br>$ <?=$o['product_price'] ?>
+                    <a href="<?php echo base_url('view_produk_books_form/'.$o['product_id']) ?>">
+                    <br>
+                      <?=$o['product_name'] ?></a>
+                    <br>
+                      $ <?=$o['product_price'] ?>
                   </td>
                   <?php endforeach ?>
                 </tr>     

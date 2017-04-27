@@ -30,33 +30,6 @@ class Halaman_depan extends CI_Controller {
 			'titlesistem'	=> $this->model->getTitle(),
 		);
 
-		$data['view2']= $this->model->selectdata('data_category pr
-				JOIN data_product p ON p.category_id = pr.category_id
-				JOIN data_produk_rating c ON p.product_id = c.id_product
-				WHERE pr.category_id IN
-				(
-				  SELECT pr.category_id FROM data_category pr WHERE pr.category_id = 2
-				)
-				ORDER BY pr.category_id');
-
-		$data['view3']= $this->model->selectdata('data_category pr
-				JOIN data_product p ON p.category_id = pr.category_id
-				JOIN data_produk_rating c ON p.product_id = c.id_product
-				WHERE pr.category_id IN
-				(
-				  SELECT pr.category_id FROM data_category pr WHERE pr.category_id = 3
-				)
-				ORDER BY pr.category_id');
-
-		$data['view4']= $this->model->selectdata('data_category pr
-				JOIN data_product p ON p.category_id = pr.category_id
-				JOIN data_produk_rating c ON p.product_id = c.id_product
-				WHERE pr.category_id IN
-				(
-				  SELECT pr.category_id FROM data_category pr WHERE pr.category_id = 4
-				)
-				ORDER BY pr.category_id');
-
 		$this->load->view('front/header',$data);
 		$this->load->view('front/index');
 		$this->load->view('front/footer');
@@ -180,15 +153,13 @@ class Halaman_depan extends CI_Controller {
 		$this->load->view('front/footer');
 	}
 
-	function view_produk_books_form($id = '')
+	function view_produk_books_form ($id = '')
 	{
-		
 		$view_produk_books_form = $this->model->selectdata('data_product where product_id = "'.$id.'"')->result_array();
 
 		$data = array(
 			'title'				=> '.:: Data Detail Buku ::. ',
-			//'view_produk_books_form'	=> $view_produk_books_form['product_id'],
-			'view_produk_books_form'	=> $view_produk_books_form['product_id'],
+			'view_produk_books_form'	=> $view_produk_books_form,
 			'titlesistem'		=> $this->model->getTitle(),
 		);
 			
