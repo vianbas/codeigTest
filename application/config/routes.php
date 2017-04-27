@@ -45,6 +45,7 @@ $route['petunjuk'] 											=  'halaman_depan/petunjuk';
 $route['tentang'] 											= 'halaman_depan/tentang';
 $route['view_produk_books'] 								= 'halaman_depan/view_produk_books';
 $route['view_produk_books_form'] 							= 'halaman_depan/view_produk_books_form';
+$route['view_produk_books_form/(:num)']						= 'halaman_depan/view_produk_books_form/$1';
 
 $route['view_produk_electronics'] 							= 'halaman_depan/view_produk_electronics';
 $route['view_produk_movie'] 								= 'halaman_depan/view_produk_movie';

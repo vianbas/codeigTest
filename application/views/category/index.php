@@ -46,26 +46,22 @@
                 <a class="navbar-brand" href="#">Daftar Buku</a>
               </div>
             </nav> 
-
+            <?php foreach ($view as $key => $value){?>
               <table id="table_data" class="table table-bordered table-admin">
                 <tr>
-                  <?php foreach ($view as $o): ?>
-                  <td>
-                  <a href="<?php echo base_url('view_produk_books_form') ?>">
-                    <img class="img-rounded" 
-                      src="<?php echo base_url('assets/img/produk/'.$o['product_id'].'.png');?>" 
-                      width="100" height="150">
-                  </a>
+                <?php echo $key."<br>";
+                    foreach($value as $o){
+                  ?>
+                  <td><a href="<?php echo base_url('view_produk_books_form') ?>"><img class="img-rounded" src="<?php echo base_url('assets/img/produk/'.$o['product_id'].'.png');?>" width="100" height="150"></a>
                   <br>
-                    <a href="<?php echo base_url('view_produk_books_form/'.$o['product_id']) ?>">
-                    <br>
-                      <?=$o['product_name'] ?></a>
-                    <br>
-                      $ <?=$o['product_price'] ?>
+                    <a href="<?php echo base_url('view_produk_books_form/'.$o['product_id']) ?>"><br><?=$o['product_name'] ?></a>
+                    <br>$ <?=$o['product_price'] ?>
                   </td>
-                  <?php endforeach ?>
-                </tr>     
+                  <?php } ?>
+                  </tr>     
               </table>
+                  <?php } ?>
+                
           </div>
           </div>
 
